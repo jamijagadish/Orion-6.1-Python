@@ -1,0 +1,38 @@
+1.What is programming
+programming is a process of writing a instruction which computer can understand. Instruction means code which we write to perform some tasks.
+
+2.Compiler
+It is a software which converts human readable codes into machine readable code at once, ex : c, c++, java.
+
+3. Interpreter
+It is a software which converts human readable codes into machine readable code at a line by line code. ex : python, JavaScript.
+
+##Programming languages are classified into two types: 
+low level languages and high level languages
+
+** Low Level Language : It directly interact with hardware, It is fast and difficult. ex: Assembly language and machine code.
+
+** High level language : It is easy to read and write, It needs a translator to translate a human readable codes into machine codes, To translate we use either compiler or interpreter, It is Slower as compare to level language. ex: c++, java.
+
+## What is Python?
+: Python is high level interpreter programming language, it was developed by Guido van Rossum in 1991, It is used to web development , data science , data analytic, AIML, automation etc.
+It is known for its easy syntax which is easy to learn.
+
+## What is Syntax?
+: In programming syntax means set of rules that define the structure and format of a programming language and features of python(easy to learn, interpretred language, cross platform, use library support, open source , object oriented programming, functional programming, scalable and fast)
+Note: To create a python file the extension should be .py. ex: demo.py.
+Note : Print() = It is a inbuilt function which is used to display some output in our terminal .
+
+## Comments:
+Comments are notes written in code that aree ignored by compiler or interpreter when the program runs, Comments are for human to explain the code or to temporarily disable a part of code , To create comments in python there are two ways :
+1.	Single line comments : use # symbol at the starting of the line to create a single line comments.
+
+2. Multi line comments : Technically python does not have a built in multi line comments syntax but we can create by using triple quote (''') ("""). 
+
+##Variables:
+Variables are the containers which are used to store some value or data in a programming language , Rules to create variables : 
+
+1. Name should not have any space 
+2. Name should not start a number 
+3.No special characters are allow except underscore(_) 
+4. Keywords can not be used to create a variable 
