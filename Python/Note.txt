@@ -167,3 +167,23 @@ elif condition:
 instructions 
 else: 
 Instructions
+
+##Loops: A loop is used to repeat a block of code multiple times until a specific condition is false. 
+Loops are used to automate the tasks, to avoid the duplicacy and making code efficient. 
+Types of Loops: 
+For Loop: It is used to iterate over a sequence or range. 
+It executes it's body or block of code once for each iteration in the sequence or range. 
+Syntax: for condition: 
+instructions 
+for i in range() 
+Instructions 
+2. While Loop: It executes it's body as long as the condition is true best to use when we don't know the stopping point. 
+Syntax: While condition: 
+Instructions 
+3. Nested Loop: It means a loop inside another loop, it is useful when we have multidimensional data like matrices. 
+ex: for i in range(1,5) 
+for j in range(1,5) 
+print(i,j) 
+Note: 
+Break-> It is used to exit the loop, Loop body must be indented 
+Continue: It is used to keep the rest code and jump to next code
