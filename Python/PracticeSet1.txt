@@ -5,3 +5,7 @@
 5.Write a function to check if a number is prime.
 6.Write a function to count words in a sentence.
 7.Replace all spaces in a string with -.
+
+8.Count the number of vowels in a string.
+9.Remove spaces from the beginning and end of a string.
+10.Find the sum of numbers from 1 to 100.
