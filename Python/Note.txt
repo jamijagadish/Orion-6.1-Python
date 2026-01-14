@@ -187,3 +187,115 @@ print(i,j)
 Note: 
 Break-> It is used to exit the loop, Loop body must be indented 
 Continue: It is used to keep the rest code and jump to next code
+
+##String: A string is a sequence of characters used to represent text.
+Strings are enclosed in single quote, double quote or triple quote.
+
+##Property of String:
+- Strings are index base collection where each and every character can be accessed by their individual index which starts from Zero.
+- Strings can’t be changed after creation because strings are immutable in nature. Any operations that modify a string returns a new string
+- String Supports Slicing -> s[1:6]
+- Strings are case Sensitive, where a and A are different characters.
+- Strings supports concatenation and repetition
+
+Note: Use 'len' method to find length.
+S[5:] - It returns a substring up to last characters.
+s[:5] - It reruns a substring from starting index (0th index).
+eg: s= "Hello"
+print(s[-2]) //l
+
+##String inbuilt methods
+Lower():- It returns a string in a lower case. eg: print(s.lower())
+Upper():- It returns a string in upper case. eg: print(s.upper())
+Capitalize():- It returns a string with first letter capital. eg: print(s.capitalize())
+title() :- It Converts the first character of each word to uppercase. eg: print(s.title())
+Split() :- It splits a string into lists buy a specified separator. eg: print(s.split(" "))
+join() :- It joins elements of iterable with string. eg: print(" " .join(s))
+replace() :- It replace a substring with a new string. It accepts two arguments. Search Value and new Value. eg: print(s.replace('a','aa'))
+strip() :- It removes the starting and ending whitespaces. eg: print(s.strip())
+lstrip() :- It removes the starting whitespaces only. eg: print(s.lstrip())
+rstrip() :- It removes the ending whitespaces only. eg: print(s.rstrip())
+find() :- It returns the first occurrence index of a substring. eg: print(s.find('o'))
+rfind() :- It returns the last occurrence index of a substring . eg: print(s.rfind())
+index() :- It returns the index number of a substring if found, if not found then returns a ValueError. eg: print(s.index('o'))
+isalpha() :- It checks if all the characters are alphabetic , it returns the value in Boolean.eg: print(s.isalpha())
+isdigit() :- It checks all the characters are digits or not , it returns value in Boolean . eg: print(s.isdigit())
+isalnum() :- It checks if all characters are alpha numeric or not, it returns value in Boolean. eg: print(s.isalnum())
+isdecimal() :- It checks if the value is decimal or not, it returns value in Boolean. eg: print(s.isdecimal())
+count() :- It counts total occurrence of a substring. eg: print(s.count('l'))
+startswith() :- It checks if the string starts with a substring , it returns value in Boolean. eg: print(s.startswith('h'))
+endswith() :- It checks if the string end with a substring, it returns value in Boolean. eg: print(s.endswith())
+
+##functions in python :-
+a function is a reusable block of code that perform a specific task. Functions help organize code reduce repetition and improve readability.
+Once we declare a function, we can execute it multiple times whenever we need by calling the function. To create a function we have to use a keyword "def" followed by the function name , (), ; and a code block.
+
+Functions are two types : Predefined function and user defined function.
+Predefined function means, a function which is already declared by the python developer to perform a specific task. To use a pre defined function we just need to call the function.
+eg:
+User defined function means a function which is created or declared by the user to perform a specific task. eg: add, sum
+Functions can return a value using a return statement/keyword.
+Syntax : def functionName():
+  #instructions
+e.g:- def sum():
+  print (10+20)
+
+user defined functions are two types :
+1. Functions without parameter
+2. Functions with parameter: 
+eg: def sub(a,b)
+  return a-b
+
+  sub(10,20), sub(200,100)
+- we can pass the default value a parameter in a function to handle error if argument is missing .
+- We can switch the position of parameters while passing value as an argument but we have to mention the parameter name to assigning the value.
+
+##Dictionary
+a dictionary is a mutable and unordered collection of key value pairs.
+Each key must be unique.
+dictionary can store any type of values.
+Dictionary are denoted by {}
+
+#Characteristic of Dictionary:
+1. Key value pair - Data is stored as pairs by using single colon. e.g: key:value.
+2. Unordered - Items are not stored in a sequence and the order may change.
+3. Mutable - Dictionary can be modified after created.
+4. No Duplicate key - No key should be duplicate, duplicate key will override the previous value.
+-> To create a dictionary either we use curly braces {} or we can use dict() constructor.
+e.g: example = dict(key = value, key= value)
+-Also we can create an empty dictionary.
+e.g: my_dict = {}
+Operations on Dictionary:-
+1. To add a new key :-
+dictionaryName['keyName'] = Value
+2. To edit a key:-
+dictionaryName['keyName'] = Value
+3. To delete an key :-
+del dictionaryName['keyname']
+4. To iterate through a dictionary :-
+(a). for key,value in dictionaryName.items():
+  print(key,value)
+(b). for key in dictionaryName:
+  print(key)
+
+Dictionary Inbuilt Methods:
+1. Copy():- It returns a copy of the original dictionary.
+dictionaryName.copy()
+2.Keys() :- It returns all the key available in a dictionary.
+dictionaryName.keys()
+3.Values() :- It return a list of all the values available in a dictionary.
+dictionaryName.values()
+4.items() :- It returns view of key-value pairs from a dictionary .
+dictionaryName.items()
+5. get() :- It returns value of the key or a default value.
+- It accepts two arguments, a> Searchkey, b> Default-Value
+- If the key is present in the dictionary then it will return the value else then it will return the default value.
+dictionaryName.get("keyName", defaultValue)
+6.pop() :- It removes key and returns it's value.
+dictionaryName.get("keyName")
+7.popitem() :- It removes the last key.
+dictioanryName.popitem()
+8.update() :- It is used to update a keys value.
+dictionaryName.update({"key":value})
+9.clear() :- It removes all the items from a dictionary.
+dictionaryName.clear()
