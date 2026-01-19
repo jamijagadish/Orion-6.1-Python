@@ -68,6 +68,7 @@ objB = B()
 # objB.sayHello()
 # objB.greet()
 
+# Multiple Inheritance
 class X:
     def display(self):
         print("Display method from class X")
@@ -85,6 +86,7 @@ objZ = Z()
 # objZ.showDetails()
 # objZ.info()
 
+# Multilevel Inheritance
 class Vehicle:
     def engine(self):
         print("Some generic vehicle sound")
