@@ -116,10 +116,10 @@ def multi(a=1, b=1):
     print("b=", b)
     return a*b
 
-print(multi(10, 20))
-print("------------")
-print(multi(100, 200))
-print("------------")
-print(multi(b=100, a=200))
-print("------------")
-print(multi(10))
+# print(multi(10, 20))
+# print("------------")
+# print(multi(100, 200))
+# print("------------")
+# print(multi(b=100, a=200))
+# print("------------")
+# print(multi(10))

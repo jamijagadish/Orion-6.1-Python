@@ -37,21 +37,24 @@
 #     print(f.readable())
 #     print(f.writable())
 
-with open('Python\example.txt', 'a+') as f:
-    f.write("\nThis is a new line")
-    print(f.readable())
-    print(f.writable())
-    content= f.readlines()
-    print(content)
-
-# with open('Python\example.txt', 'r+') as f:
-#     content= f.read()
-#     print(content)
+# with open('Python\example.txt', 'a+') as f:
 #     f.write("\nThis is a new line")
-
-# with open('Python\example.txt', 'w+') as f:
-#     content= f.read()
-#     print(content)
 #     # print(f.readable())
 #     # print(f.writable())
-#     f.write("This is a new line")
+#     f.seek(0)
+#     content = f.readlines()
+#     print(content)
+
+# with open('Python\example.txt', 'r+') as f:
+#     f.seek(0)
+#     content= f.read()
+#     print(content)
+#     f.write("\nThis is another new line")
+
+with open('Python\example.txt', 'w+') as f:
+    f.write("This is a new line")
+    f.seek(0)
+    content= f.read()
+    print(content)
+    # print(f.readable())
+    # print(f.writable())
