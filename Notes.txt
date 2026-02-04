@@ -189,3 +189,16 @@ Some additional Methods for File Handling:-
 1. seek()-It moves the file pointer to specific position/index.
 2. writable()-It checks if the file is writable or not.
 3. readable()-It checks if the file is readable or not.
+
+Modules:- 
+Syntax-1
+import module_name
+
+Syntax-2
+from module_name import method/class
+
+Syntax-3
+from module_name import method1, method2, ..
+
+Syntax-4(not recommended)
+from module_name import * 
