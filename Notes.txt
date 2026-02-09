@@ -202,3 +202,26 @@ from module_name import method1, method2, ..
 
 Syntax-4(not recommended)
 from module_name import * 
+
+Multi-Threading:- threading
+
+Multi-Processing:- multiprocessing
+
+python -m notebook
+pip install jupyter
+
+zip()-
+dtype - int32, int54, float64, etc
+size - 
+itemSize - 
+shape - e.g- (2,3)
+
+Array Creation and basic manipulation Methods:-
+1. array()
+2. zeros()
+3. ones()
+4. empty()
+5. arange(start, end , steps)
+6. reshape(row, col)
+7. linspace()	
+8. min() and max()
