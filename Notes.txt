@@ -225,3 +225,10 @@ Array Creation and basic manipulation Methods:-
 6. reshape(row, col)
 7. linspace()	
 8. min() and max()
+9. sum()
+10. sqrt()
+11. dot()
+12. power()
+13. ravel()
+
+Indexing in NumPy Array:-
