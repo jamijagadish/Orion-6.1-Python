@@ -232,3 +232,11 @@ Array Creation and basic manipulation Methods:-
 13. ravel()
 
 Indexing in NumPy Array:-
+
+Stacking:- 
+	1.Vertically(Y-axis) - vstack()
+	2.Horizontally(X-axis) - hstack()
+	
+Splitting:-
+	1.Vertically - vsplit(array, no of new array)
+	2.Horizontally - hsplit(array, no of new array)
