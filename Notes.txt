@@ -240,3 +240,14 @@ Stacking:-
 Splitting:-
 	1.Vertically - vsplit(array, no of new array)
 	2.Horizontally - hsplit(array, no of new array)
+	
+	
+Pandas:- 
+person1 = {
+		name: ABCD,
+		age: 25,
+		job: SD
+		}
+		
+1.Series
+2.DataFrame

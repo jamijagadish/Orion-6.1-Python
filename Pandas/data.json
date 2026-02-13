@@ -1,0 +1,21 @@
+[
+	{
+  "_id": {
+    "$oid": "6943f616089253e26832feeb"
+  },
+  "title": "Harry Potter",
+  "author": "J. K. Rowling",
+  "basePrice": 1200,
+  "finalPrice": 899,
+  "banner": "https://ritikart.com/cdn/shop/files/1_7a0681a0-c015-40aa-97bb-b10351074cd2_800x.jpg?v=1691819438",
+  "details": "Dive into the magical world of Harry Potter with this special edition set of all 7 novels! Follow Harry on his thrilling journey of epic adventures and courageous battles, and immerse yourself in a captivating story that will bring the pages to life. Ahead lies an unforgettable journey.",
+  "publishedDate": {
+    "$date": "2000-10-08T18:30:00.000Z"
+  },
+  "rating": 4.4,
+  "__v": 0,
+  "category": {
+    "$oid": "6943f9a0051c5bad487628a6"
+  }
+}
+]
