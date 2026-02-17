@@ -1,0 +1,176 @@
+-Pandas is widely used library for data manipulation and analysis specially in Data science and machine learning
+-Pandas is an open-source library that provides flexible and efficient tools to analyze, clean, explore and manipulate dataset in python.
+-It offers two types of data structures:
+1)	Series- Which means one dimensional
+2)	DataFrame - Which is Two dimensional, similar to Excel Sheet or SQL table
+-It was created by Wes McKinney in 2008 On Top of NumPy to combine the power of Array competition with higher level Data Structure
+-With Pandas we can load data From Various Format like csv, excel, database, JSON etc.
+
+# Use Case of Pandas:-
+1.Data Cleaning:
+2.Data Transformation
+3.Data storage
+4.Machine Learning Overflow
+
+##DataFrame
+-A Dataframe in pandas is a powerful 2-D, tabular data structure that makes it easy to manipulate and analyze the data.
+-To create a dataframe there are several techniques:
+1.From a dictionary:
+import pandas as pd
+data = { 'Name': ['abc','def','ghi']
+         'Age' : [12,13,14]
+          'City': ['a','b','c']
+}
+df = pd.DataFrame(data)
+print (df)
+
+# From dictionary
+df = pd.DataFrame({'A':[1,2], 'B':[3,4]})
+
+# From list of lists
+df = pd.DataFrame([[1,2,3],[4,5,6]], columns=['X','Y','Z'])
+
+# From NumPy array
+arr = np.array([[1,2,3],[4,5,6]])
+df = pd.DataFrame(arr, columns=['A','B','C'])
+
+# From CSV/Excel
+df = pd.read_csv("file.csv")
+df = pd.read_excel("file.xlsx")
+
+# From JSON
+df = pd.read_json("file.json")
+
+#from List of Touple
+td = [(1,'Sumit',21)
+       (2,'Sumit',31) ]
+df3 = pd.DataFrame(td,columns = ['sn','Name','Age'])
+
+#From list of dictionary
+ld = [
+{'name' : 'sk', 'Age' :21}
+{'name' : 'ab' , 'Age' :25}
+]
+
+df4 = pd.DataFrame(ld)
+df4
+
+#Reading and Writing on CSV file
+-To Read a csv file we need to use read_csv() method and we have to pass file name/path as an argument to the method. 
+ex: pd.read_csv("File_name.csv")
+
+-To skip n number of rows while creating a dataframe from a csv file either we can use skiprows attribute or header attribute
+ex: df = pd.read_csv("name.csv", skiprows = 5)
+df2 = pd.read_csv("name.csv", header=5)
+
+-When we don't have any table heading we can use "header = True". It will automatically generate column names that is index values.
+df2 = pd.read_csv("name.csv", header=True)
+
+-We can also provide names for each column by using names attribute.
+pd.read_csv('a.csv', header = None , names = ['col1','col2'])
+
+-We can read the limited number of rows from a csv file to create a dataframe by using nrows attribute which excludes header.
+pd.read_csv("a.csv", nrows = 5)
+
+-In case of missing cells with data then we can initialize NaN values by using na_values attribute , it accepts number of arguments which will be replaced by NaN values 
+pd.read_csv("a.csv", na_values = ['a','b'])
+-It is useful for cleaning data files.
+
+-If we want to initialize NaN Values to Some specific Column only , then we can replace by using dictionary format.
+pd.read_csv("a.csv", na_values = {'a':1 ,'b':2})
+
+-To create a csv file from a dataframe then we can use 'to_csv' method and we have to pass a name as an argument for the new csv file
+df.tp_csv("a.csv")
+
+-However add a new column for the index values we can skip the index values by using index = False
+df.tp_csv("a.csv",index = False)
+
+-To create csv file based on some specific columns then we have to mention specify columns name by using columns attribute
+df.tp_csv("a.csv", columns = ['f','s'],index = False)
+
+-Also we can skip header while creating file by using "Header = False"
+df.tp_csv("a.csv",Header = False)
+
+
+Read and Write Excel File
+-To read an excel file create a dataframe we need to use read_excel() method and have to pass the excel file name as an argument
+pd.read_excel("file_name.xlsx")
+
+-To read a specific sheet from an excel file we have to mention the sheet name inside the read method 
+pd.read_excel("file_name.xlsx", sheet_name = 'sheet2')
+
+-To replace any cell from a specific column we have to create a function and pass it as an argument for converters
+def convert_gender(cell):
+    if cell == "female":
+        return 'women'
+    return cell
+
+def convert_age(cell):
+    if cell == 20:
+        return 21
+    return cell
+
+df2 = pd.DataFrame(data2, converters 
+                   = {
+    'gender' : convert_gender,
+    'age' : convert_age
+})
+
+-We can write or create an excel file from a DataFrame by using to_excel() method. We have to pass new file name as an argument.
+df.to_excel("file_name.xlsx")
+
+-However it will add an extra column for the index values, we can skip the index values by using index = False 
+df.to_excel("file_name.xlsx", index = False)
+
+-We can use sheet_name attribute to provide a name for the sheet during writing 
+-We can start our new excel file from a specific row number and also column numbers by using 'startrow' and 'startcol' attributes
+df.to_excel("file_name.xlsx", index = False, startrow = 3, startcol = 3)
+
+-We can write two or more DataFrames to a single excel file by using excel writer method and writer keyword
+with pd.ExcelWriter('fileNAME.xlsx') as writer
+
+#Handling Missing Data:
+-In case of any cells with some missing data or were missing some rows of data then we can handle it by using various method.
+-There are methods which we can use to handle missing data such as fillna(), dropna(), replace() etc.  
+
+## Fillna() 
+-It is used to replace the NaN values with a specific value in a dataFrame. 
+-It will search all the cell in the DataFrame and it will replace all the NaN values with the specific value that we will pass as an argument for fillna() method .
+Syntax: df.fillna("newVALUE")
+
+-If we want to replace each column with a different value then we can replace by passing dictionary format as an argument to fillna() method .
+Syntax: df.fillna("newvalue")
+'col':''vaalue'
+'col2': 'value'
+})
+
+-If we want to fill NaN cell with its previous cell value the we can do it by using method = ffill argument for fillna() method , where 'ffill' stands for forward fill.
+Syntax: df.fillna(method = 'ffill')
+
+-Also we can use method = bfill, which means backward fill. 
+-It will fill the NaN cell with next cells value 
+Syntax: df.fillna(method = 'bfill')
+
+-Also we can provide axis value to the fillna() method and according to the axis value it will fill the NaN cell , with forward or backward data 
+Syntax: df.fillna(method = 'ffill', axis = 'columns')
+
+-We can Set a limit to fill the empty or NaN cell with previous or next values by using limit attribute . 
+-It will set a limit for how many cells we want to fill the data from next or previous cell.
+Syntax : df.fillna(method='ffill', limit = 2)
+
+-For numeric values we can predict the empty cells value based on previous and next cells value by using interpolate() method , it will predict the value based on interpolation 
+Syntax : df.fillna(interpolate())
+
+-There are various arguments that we can pass to interpolate method such as method = linear/nearest/quadratic/cubic/time...etc.
+-By default method value is linear 
+
+
+## Dropna():
+-If we want to delete or drop the any row which contains NaN values then we can drop by using dropna() method 
+-We can use have parameter to drop rows based on some condition 
+Syntax: df.dropna(how='all') It will drop all the rows if all the cells from that row is NaN .
+
+-If we want to drop rows based on some conditions like if a row contains atleast one or two or n numbers of non NaN values then keep the row in that case we can use thresh attribute .
+Syntax: df.dropna(thresh = 1)
+
+-We can create a range of date by using date_range() it will create a range of date from start date to end date which we have to pass as an argument and the date format should be mm-dd-yyyy
