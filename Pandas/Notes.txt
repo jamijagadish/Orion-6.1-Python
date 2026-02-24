@@ -174,3 +174,4 @@ Syntax: df.dropna(how='all') It will drop all the rows if all the cells from tha
 Syntax: df.dropna(thresh = 1)
 
 -We can create a range of date by using date_range() it will create a range of date from start date to end date which we have to pass as an argument and the date format should be mm-dd-yyyy
+
