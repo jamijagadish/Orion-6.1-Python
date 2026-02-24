@@ -175,3 +175,69 @@ Syntax: df.dropna(thresh = 1)
 
 -We can create a range of date by using date_range() it will create a range of date from start date to end date which we have to pass as an argument and the date format should be mm-dd-yyyy
 
+##Replace() : To replace any value in a DataFrame we can use replace() method. It accepts two parameter : 
+1.Search value or Old value
+2.New Value
+
+Syntax: df.replace(searchValue, newValue)
+
+If we want to replace any value with nan value we can use numpy as a nan value
+Syntax: df.replace(searchValue, np.NaN)
+
+To replace multiple values we can use list format.
+syntax: df.replace([val1,val2,val3], newval)
+
+If we want to replace some value for any specific column then we have to use dictionary format  
+syntax: df.replace({'col1': seaarchValue,
+                     'col2' : searchValue}, newValue})
+When we want to replace a specific value then also we can use the dictionary format which called as mapping 
+syntax: df.replace({'val': newVal1,
+                     'val2' : Newval2})
+
+By using regex we can replace values based on some pattern.
+Syntax: df.replace({
+                      'col1' : '[A-Za-z]'}, "newVALUE",
+                       regex = True)
+
+To replace the list of value with another list of value we have to pass both the list as an argument for replace method, both the list should have same number of element 
+Syntax: df.replace([list1],[list2])
+
+##Group By
+To group data from a DataFrame We can use Group by method it will filter all the data and create groups with similar data we have to pass an argument to the group by method based on which it will group the similar data.
+Syntax : df.groupby('colName')
+
+We can use for loop to iterate over the group
+for groupname, group_Data in group
+    print(groupname)
+    print(group_Data)
+
+To access a specific group DataFrame we can use get_group method and we have to pass a group name as an argument then it will return the entire groups dataFrame 
+Syntax : gr.get_group(groupname)
+
+To find out the maximum value of each group we can use max method it will return the maximum value from each column or each group.
+Syntax : gr.max()
+This process is called as split-apply-combine.
+
+##Mean : It is used to return the average value , 
+
+## Describe : To get all the details or get the analytics in one shot we have to use describe method .
+Syntax : gr.describe()
+
+##Concat() :  The concat method is used to concatenate two or more DataFrames along a specified axis either rows or columns to produce a new dataframe
+Syntax : gr.concat([df1,df2,df3])
+
+If we use ignore_index = True , the resulting dataframe will have a new integer index discarding the original indices  by ignoring the default indexing as false 
+Syntax : gr.concat([df1,df2,df3], ignore_index = true)
+
+By using Keys attribute we can add a separate index for each Data Frame during Concatenation. It is useful when combining objects with overlapping objects 
+By using this key value we can select or retype a single set of data from the cancatenated Dataframe 
+
+We can use the axis attribute to concatenate the dataframe to row wise or column wise , by default axis value is Zero which concatenates row wise or column value 
+
+To create an order for each dtaframe we can use index attribute provide index value
+When we will concatenate data frames the s=data will be concatenate based on the index value  
+
+We can also concatenate a datframe by data value 
+s = pd.series(['a', 'b', 'c', 'd'])
+df = pd.concat([df1,s], axis =1)
+
