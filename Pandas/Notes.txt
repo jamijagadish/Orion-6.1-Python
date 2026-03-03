@@ -241,3 +241,90 @@ We can also concatenate a datframe by data value
 s = pd.series(['a', 'b', 'c', 'd'])
 df = pd.concat([df1,s], axis =1)
 
+
+##Merged DataFrame 
+-When we want to merge two or more dataframe into a single dataframe we have to use merge() method and we have to pass the common column name based on which we want to merge the dataframe 
+Syntax : pd.merge('df1', 'df2', on = 'common_col_name')
+
+-If the common column values are not same then it will merge only common values 
+-merge() method merges the data based on the intersection theory which is also called as inner join  
+
+-If we want to merge the dataframe either left or right we have to use an attribute called 'how' and we have to pass the value either left join or right join 
+Syntax : pd.merge(temp, wind on = "city", how = 'left')
+
+-To merge all the data from both the dataframe we have to use how = 'outer' it is called outer join.’
+Syntax : pd.merge(temp, wind on = "city", how = outer)
+
+-To indicate the non-common data are from which dataframe we have to use indicator attribute
+
+##Pivot 
+-It allows us to reshape the DataFrame, and it is used to reshape data based on column value.
+-It requires unique index and column combinations.
+-Pivot() method fails if there are duplicate combinations of index and columns.
+Syntax:- df.pivot(index='ColName', columns = 'ColName', Values = 'ColName')
+Ex:- df.pivot(index='Employee', columns = 'Year', Values = 'Salary')
+
+"index = Employee" means rows are employee
+columns = Year" means each year becomes a new columns
+"Value = Salary" means sale values are salary
+
+-pivot_table() :- It is used to summarize and aggregate the data inside dataframe
+-It is similar to pivot method but it can handle duplicate value 
+-It allows aggregation using "aggfunc", default value is mean
+
+pivot_table_df = df.pivot_table(
+     index = 'Employee',
+     columns = 'Year',
+     values = 'salary',
+     aggfunc = 'sum',
+     fill_value = 0
+     margins = True
+     margin_name = 'Total'
+)
+
+Here aggfunc= sum means calculate the sum of salary
+fill_value = 0 replaces missing value with zero
+margins= True adds all rows or columns
+margins_name = Total , name of the column of the total value
+
+melt():- It is used to reshape data from a wide format to long format , it is the reverse of pivot method. 
+-It onwards multiple columns into two key columns one is for variable names and the other one is for values 
+
+melt_df = pd.melt(
+    df,
+    id_vars=['Employee', 'Department'],   
+    value_vars=['Salary', 'Bonus'],       
+    var_name='New Col',                  
+    value_name='Amount'                   
+)
+Here id_vars defines columns that stay as identifiers 
+value_varse defines columns that get unpivoted into rows that name defines a name to value column 
+
+##rename():-
+-It is used to rename a column name in a dataframe 
+Syntax : df.rename(columns = {'oldName':'newName'},
+inplace =True )
+
+columns attributes maps all column names to new column names 
+ex:- df.rename(columns={'Employee':'Emp Name'}, inplace=True)
+
+##drop_duplicates():-
+-It is used to drop or delete duplicate rows from a dataframe 
+Syntax:- df3.drop_duplicates(inplace = True)
+
+##apply():-
+-It is used to apply a custom function to a dataframe or a series, it is also used to data transformation, cleaning and feature engineering  
+
+Syntax: df.apply(function)
+the function is used to apply to each column or row.
+df['New'] = df['Year'].apply(lambda x : x+1)
+
+
+##sort_values():-
+It is used to sort a dataframe or series by one or more columns or index values 
+It is one of the most common operations when cleaning or analyzing the data 
+Syntax: df.sort_values('by , ascending = True, inplace = True)
+
+by means column names or index values 
+ascending = True means , ascending order and False means descending order , by default ascending = true
+
